@@ -9,14 +9,15 @@ public class Client
 
     public Client()
     {
-        log.debug("My Error");
         logBasicSystemInfo();
 
     }
     private void logBasicSystemInfo() {
         log.info("Launching the application...");
         log.info(
-                "Operating System: " + System.getProperty("os.name") + " "
+                "Operating System: "
+                        + System.getProperty("os.name")
+                        + " "
                         + System.getProperty("os.version")
         );
         log.info("JRE: " + System.getProperty("java.version"));
@@ -29,5 +30,3 @@ public class Client
     }
 
 }
-
-
