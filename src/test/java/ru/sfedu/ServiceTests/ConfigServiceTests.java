@@ -15,8 +15,14 @@ public class ConfigServiceTests
         Status status = ConfigService.setProperties(ConfigTypes.PROPERTIES);
 
         Assertions.assertEquals(status,Status.SUCCESS);
-        Assertions.assertEquals(456, Integer.parseInt(ConfigService.getProperty(Constants.TEST_PROP1)));
-        Assertions.assertEquals("sfedu", ConfigService.getProperty(Constants.TEST_PROP2));
+
+        String prop1 = ConfigService.getProperty(Constants.TEST_PROP1);
+        String prop2 = ConfigService.getProperty(Constants.TEST_PROP2);
+
+        Assertions.assertNotNull(prop1);
+        Assertions.assertNotNull(prop2);
+        Assertions.assertEquals(456, Integer.parseInt(prop1));
+        Assertions.assertEquals("sfedu", prop2);
 
     }
 
@@ -26,8 +32,14 @@ public class ConfigServiceTests
         Status status = ConfigService.setProperties(ConfigTypes.XML);
 
         Assertions.assertEquals(status,Status.SUCCESS);
-        Assertions.assertEquals(456, Integer.parseInt(ConfigService.getProperty(Constants.TEST_PROP1)));
-        Assertions.assertEquals("sfedu", ConfigService.getProperty(Constants.TEST_PROP2));
+
+        String prop1 = ConfigService.getProperty(Constants.TEST_PROP1);
+        String prop2 = ConfigService.getProperty(Constants.TEST_PROP2);
+
+        Assertions.assertNotNull(prop1);
+        Assertions.assertNotNull(prop2);
+        Assertions.assertEquals(456, Integer.parseInt(prop1));
+        Assertions.assertEquals("sfedu", prop2);
     }
 
     @Test
@@ -36,8 +48,14 @@ public class ConfigServiceTests
         Status status = ConfigService.setProperties(ConfigTypes.YML);
 
         Assertions.assertEquals(status,Status.SUCCESS);
-        Assertions.assertEquals(456, Integer.parseInt(ConfigService.getProperty(Constants.TEST_PROP1)));
-        Assertions.assertEquals("sfedu", ConfigService.getProperty(Constants.TEST_PROP2));
+
+        String prop1 = ConfigService.getProperty(Constants.TEST_PROP1);
+        String prop2 = ConfigService.getProperty(Constants.TEST_PROP2);
+
+        Assertions.assertNotNull(prop1);
+        Assertions.assertNotNull(prop2);
+        Assertions.assertEquals(456, Integer.parseInt(prop1));
+        Assertions.assertEquals("sfedu", prop2);
     }
 
 }

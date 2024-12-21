@@ -51,6 +51,8 @@ public class ConfigService
 
     public static String getProperty(String key)
     {
+        if(props.isEmpty())
+            setProperties(ConfigTypes.PROPERTIES);
         return props.getProperty(key);
     }
 }
