@@ -5,6 +5,8 @@ import lombok.Getter;
 public enum Status
 {
     SUCCESS(200),
+    UPDATED(300),
+    NOTFOUND(404),
     FAULT(500);
 
     @Getter
