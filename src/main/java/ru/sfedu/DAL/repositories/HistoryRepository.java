@@ -1,16 +1,13 @@
 package ru.sfedu.DAL.repositories;
 
-import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bson.Document;
-import org.bson.conversions.Bson;
-import org.bson.types.ObjectId;
+
 import ru.sfedu.Constants;
 import ru.sfedu.DAL.entities.HistoryContent;
 import ru.sfedu.DAL.models.dbResponse;
@@ -87,7 +84,7 @@ public class HistoryRepository implements IRepository<HistoryContent>
                 log.error("При удаленни записи, ни одна из записей не была удалена. Id удаляемой записи: " + object.getId());
                 return new dbResponse<>(Status.FAULT);
             }
-
+            log.info("Удалена запись с id:" + object.getId());
             return new dbResponse<>(Status.SUCCESS);
         }
         catch (Exception e)
@@ -114,7 +111,7 @@ public class HistoryRepository implements IRepository<HistoryContent>
                 log.error("При обновлении записи, ни одна из записей не была обновлена. Id обновляемой записи: " + object1.getId());
                 return new dbResponse<>(Status.FAULT);
             }
-
+            log.info("Запись с id:" + object1.getId() +" была изменена");
             return new dbResponse<>(Status.SUCCESS);
         }
         catch (Exception e)

@@ -9,6 +9,8 @@ public class Constants
     public static final String MONGODB_CONNECTIONSTRING = "mongodb.connection";
     public static final String MONGODB_DATABASE = "mongodb.database";
     public static final String MONGODB_COLLECTIONS_HISTORY = "mongodb.historyCollection";
+
+    public static final String CSV_HISTORY = "csv.history";
     public static final String PLANET_EARTH = "planet.earth";
     public static final String PLANET_JUPITER = "planet.jupiter";
 
